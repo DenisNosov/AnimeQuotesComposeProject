@@ -1,6 +1,10 @@
 package com.example.animequotescomposeproject
 
 import androidx.compose.animation.*
+import androidx.navigation.NavBackStackEntry
+import androidx.navigation.NavDestination
+import androidx.navigation.NavDestination.Companion.hierarchy
+import androidx.navigation.NavGraph
 
 internal sealed class Screen(val route: String) {
     object AnimeList : Screen("anime_list")
@@ -27,6 +31,39 @@ private sealed class LeafScreen(
             "${root.route}/quotes_by_person/$personName"
     }
 }
+
+@ExperimentalAnimationApi
+private fun AnimatedContentScope<*>.defaultEnterTransition(
+    initial: NavBackStackEntry,
+    target: NavBackStackEntry
+): EnterTransition {
+    val initialNavGraph = initial.destination.hostNavGraph
+    val targetNavGraph = target.destination.hostNavGraph
+
+    if (initialNavGraph.id != targetNavGraph.id) {
+        return fadeIn()
+    }
+
+    return fadeIn() + slideIntoContainer(AnimatedContentScope.SlideDirection.Start)
+}
+
+@ExperimentalAnimationApi
+private fun AnimatedContentScope<*>.defaultExitTransition(
+    initial: NavBackStackEntry,
+    target: NavBackStackEntry
+): ExitTransition {
+    val initialNavGraph = initial.destination.hostNavGraph
+    val targetNavGraph = target.destination.hostNavGraph
+
+    if (initialNavGraph.id != targetNavGraph.id) {
+        return fadeOut()
+    }
+
+    return fadeOut() + slideOutOfContainer(AnimatedContentScope.SlideDirection.Start)
+}
+
+private val NavDestination.hostNavGraph: NavGraph
+    get() = hierarchy.first { it is NavGraph } as NavGraph
 
 @ExperimentalAnimationApi
 private fun AnimatedContentScope<*>.defaultPopEnterTransition(): EnterTransition {
