@@ -11,16 +11,13 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.example.animequotescomposeproject"
+        applicationId "com.example.quotes_by_person"
         minSdk 21
         targetSdk 31
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary true
-        }
     }
 
     buildTypes {
@@ -36,44 +33,26 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures {
-        compose true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion Dependencies.composeVersion
-    }
-    packagingOptions {
-        resources {
-            excludes += '/META-INF/{AL2.0,LGPL2.1}'
-        }
-    }
 }
 
 dependencies {
 
-    implementation Dependencies.androidxCore
-    implementation Dependencies.composeUi
-    implementation Dependencies.composeMaterial
-    implementation Dependencies.composeMaterialIconsCore
-    implementation Dependencies.composeMaterialIconsExtended
-    implementation Dependencies.composeUiTooling
-    implementation Dependencies.composeUiToolingPreview
-    implementation Dependencies.composeActivity
-    implementation Dependencies.composeFoundation
-
     implementation Dependencies.lifecycleViewModel
-    implementation Dependencies.lifecycleRuntime
-    implementation Dependencies.lifecycleViewModelSavedState
-    implementation Dependencies.lifecycleCommonJava8
     implementation Dependencies.lifecycleViewModelCompose
 
     implementation Dependencies.navigationCompose
+    implementation Dependencies.hiltNavigationCompose
+
+    implementation Dependencies.composeFoundation
+    implementation Dependencies.composeUi
+    implementation Dependencies.composeUiTooling
+    implementation Dependencies.composeUiToolingPreview
+    implementation Dependencies.composeMaterial
 
     implementation Dependencies.kotlinStdlib
     implementation Dependencies.kotlinCoroutines
 
     implementation Dependencies.hiltAndroid
-    implementation Dependencies.hiltNavigationCompose
     kapt Dependencies.hiltCompiler
 
 }

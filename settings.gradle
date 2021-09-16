@@ -19,3 +19,4 @@ dependencyResolutionManagement {
 rootProject.name = "AnimeQuotesComposeProject"
 include ':app'
 include ':common-ui-compose'
+include ':ui-quotes-by-person'
