@@ -12,16 +12,28 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun ClickableTextListItem(
+fun TextListItem(
     text: String,
-    listener: (String) -> Unit
+    modifier: Modifier = Modifier
 ) {
     Text(
         text = text,
         fontSize = 20.sp,
         color = Color.Black,
-        modifier = Modifier.fillMaxWidth()
-            .clickable { listener.invoke(text) }
+        modifier = modifier
+            .fillMaxWidth()
             .padding(16.dp)
+    )
+}
+
+@Composable
+fun ClickableTextListItem(
+    text: String,
+    listener: (String) -> Unit,
+    modifier: Modifier = Modifier
+) {
+    TextListItem(
+        text,
+        modifier.clickable { listener.invoke(text) }
     )
 }

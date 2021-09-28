@@ -51,6 +51,8 @@ android {
 
 dependencies {
 
+    implementation project(Modules.network)
+
     implementation Dependencies.androidxCore
     implementation Dependencies.composeUi
     implementation Dependencies.composeMaterial
@@ -60,6 +62,9 @@ dependencies {
     implementation Dependencies.composeUiToolingPreview
     implementation Dependencies.composeActivity
     implementation Dependencies.composeFoundation
+
+    implementation Dependencies.okHttp
+    implementation Dependencies.retrofit
 
     implementation Dependencies.lifecycleViewModel
     implementation Dependencies.lifecycleRuntime

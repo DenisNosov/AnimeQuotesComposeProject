@@ -37,6 +37,8 @@ android {
 
 dependencies {
 
+    implementation project(Modules.commonUiCompose)
+
     implementation Dependencies.lifecycleViewModel
     implementation Dependencies.lifecycleViewModelCompose
 
