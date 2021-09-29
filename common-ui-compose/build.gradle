@@ -36,5 +36,6 @@ dependencies {
     implementation Dependencies.composeUi
     implementation Dependencies.composeFoundation
     implementation Dependencies.composeMaterial
+    implementation Dependencies.lifecycleRuntime
     
 }

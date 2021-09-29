@@ -35,12 +35,23 @@ android {
 
 dependencies {
 
+    implementation(project(Modules.domain))
     implementation(project(Modules.model))
-    implementation(project(Modules.repositories))
-    implementation(project(Modules.mappers))
+    implementation(project(Modules.commonUiCompose))
 
     implementation(Dependencies.androidxCore)
 
+    implementation(Dependencies.navigationCompose)
+
+    implementation(Dependencies.composeFoundation)
+    implementation(Dependencies.composeMaterial)
+    implementation(Dependencies.composeUiTooling)
+    implementation(Dependencies.composeUiToolingPreview)
+
+    implementation(Dependencies.kotlinStdlib)
+
     implementation(Dependencies.hiltAndroid)
+    implementation(Dependencies.hiltNavigationCompose)
     kapt(Dependencies.hiltCompiler)
+
 }

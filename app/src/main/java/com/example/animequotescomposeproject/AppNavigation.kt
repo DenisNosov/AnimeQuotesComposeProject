@@ -26,10 +26,6 @@ private sealed class LeafScreen(
             "${root.route}/quotes_by_anime/$animeTitle"
     }
 
-    object QuotesByPerson : LeafScreen("quotes_by_person/{personName}") {
-        fun createRoute(root: Screen, personName: String) =
-            "${root.route}/quotes_by_person/$personName"
-    }
 }
 
 @ExperimentalAnimationApi

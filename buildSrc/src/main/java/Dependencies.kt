@@ -93,7 +93,7 @@ object Dependencies {
     }
 
     private object Versions {
-        const val androidGradlePluginVersion = "7.1.0-alpha11"
+        const val androidGradlePluginVersion = "7.1.0-alpha12"
         const val kotlinVersion = "1.5.30"
 
         const val navigation = "2.4.0-alpha09"
@@ -103,7 +103,7 @@ object Dependencies {
         const val androidxCore = "1.6.0"
         const val androidxActivityCompose = "1.3.1"
         const val compose = "1.0.2"
-        const val hiltNavigationCompose = "1.0.0-alpha-03"
+        const val hiltNavigationCompose = "1.0.0-alpha03"
         const val retrofit = "2.9.0"
         const val okHttp = "4.8.0"
         const val gson = "2.8.6"

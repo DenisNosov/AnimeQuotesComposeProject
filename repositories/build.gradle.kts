@@ -36,11 +36,11 @@ android {
 dependencies {
 
     implementation(project(Modules.model))
-    implementation(project(Modules.repositories))
-    implementation(project(Modules.mappers))
+    implementation(project(Modules.network))
 
     implementation(Dependencies.androidxCore)
 
     implementation(Dependencies.hiltAndroid)
     kapt(Dependencies.hiltCompiler)
+
 }
